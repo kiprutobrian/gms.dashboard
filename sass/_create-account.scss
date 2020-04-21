@@ -1,0 +1,35 @@
+.create-account {
+    background: #7b7b7b;
+    height: 100vh;
+
+    &__form {
+        background: #FFFFFF;
+        border-radius: 12px;
+        padding: 15rem 10rem;
+
+        &-item {
+            margin-bottom: 2rem;
+
+            &_input {
+                height: 6.4rem;
+            }
+
+            &_switch {}
+
+            label {
+                color: #000000;
+                font-size: 1.4rem;
+            }
+        }
+
+        &-btn {
+            background: #EE6E73;
+            border: 1px solid #EE6E73;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: 1.6rem;
+            width: 20.2rem;
+            padding: 1.5rem 0;
+        }
+    }
+}

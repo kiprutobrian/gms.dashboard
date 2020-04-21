@@ -1,0 +1,28 @@
+nav {
+    box-shadow: unset;
+
+    .breadcrumb {
+        background-color: transparent;
+        align-items: center;
+
+        .breadcrumb-item {
+            font-size: 1.6rem;
+
+            a {
+                color: #000000;
+            }
+
+            &.active {
+                font-size: 1.4rem;
+                color: #A0A0A0;
+            }
+        }
+
+        .breadcrumb-item+.breadcrumb-item {
+
+            &::before {
+                content: "";
+            }
+        }
+    }
+}

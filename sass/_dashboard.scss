@@ -1,0 +1,92 @@
+/*----------------------------------------
+  Dashboard Page Style
+------------------------------------------*/
+.dashboard {
+    background-color: $body-bg;
+
+    nav {
+        box-shadow: unset;
+
+        .breadcrumb {
+            background-color: transparent;
+
+            .breadcrumb-item {
+
+                a {
+                    font-size: 1.6rem;
+                    color: #000000;
+                }
+
+                &.active {
+
+                    a {
+                        color: #A0A0A0;
+                    }
+                }
+            }
+
+            .breadcrumb-item+.breadcrumb-item {
+
+                &::before {
+                    color: #000000;
+                    content: ">";
+                }
+            }
+        }
+    }
+
+    .h2 {
+        font-size: 3.2rem;
+        font-weight: 600;
+        color: #000000;
+
+    }
+}
+
+#main {
+    margin: 5rem;
+
+    .dashboard {
+        margin-right: 19rem;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+
+
+        &--box {
+            padding: 2rem;
+            display: flex;
+            background: #ffffff;
+            align-items: center;
+            border-radius: 4px;
+
+            &:hover {
+                background: #EE6E73;
+
+                .icons_themecolor {
+                    color: #ffffff;
+                }
+
+                .text {
+                    color: #ffffff;
+
+                }
+            }
+
+            .icons_themecolor {
+                color: #000000;
+                font-size: 3.6rem;
+                padding-right: 2rem;
+            }
+
+            .text {
+                color: #000000;
+                font-size: 1.6rem;
+                white-space: nowrap;
+                line-height: 1;
+                margin: 0;
+            }
+        }
+
+    }
+}

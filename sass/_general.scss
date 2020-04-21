@@ -1,0 +1,62 @@
+/*----------------------------------------
+  General Layout Style
+------------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5% !important; // 10px/16px = 62.5% -> 1rem = 10px
+    font-family: $primaryFont;
+    background: $body-bg;
+
+    @include media-breakpoint-down(lg) {
+        font-size: 50% !important;
+    }
+}
+
+body {
+    font-family: $primaryFont;
+    color: $tertiaryColor;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+#app{
+    overflow: hidden;
+    width: 100%;
+}
+.container-gms {
+    width: 90%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.bg-dark {
+    background-color: #8E24AA !important;
+}
+
+.bg-light {
+    background-color: $white !important;
+}
+
+a{
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        text-decoration: none;
+        outline: none;
+    }
+}
+//spacing

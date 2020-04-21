@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+
+        <title>GMS</title>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="sidebar d-none d-md-block px-0 bg-dark collapse" th:fragment="leftnav" id="navbarNav">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column flex-nowrap">
+                            <div class="sidebar-header">
+                                <div class="sidebar-brand">
+                                    <a class="mr-auto logo" href="/DashBoard">
+                                        GMS <span>Portal</span>
+                                    </a>
+                                    <div class="navbar-toggler" type="button" data-toggle="collapse"
+                                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                        aria-label="Main menu">
+                                        <div class="nav-icon">
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center" href="/DashBoard">
+                                    <i class="material-icons mr-sm">dashboard</i> DashBoard
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center " type="button" data-toggle="collapse"
+                                    data-target="#UserManagement" aria-controls="UserManagement" aria-expanded="false"
+                                    aria-label="User Management">
+                                    <i class="material-icons mr-sm">person_outline</i> User Management
+                                    <span class="material-icons ml-auto rotate">
+                                        keyboard_arrow_right
+                                    </span>
+                                </a>
+                                <div class="sub-group collapse" id="UserManagement">
+                                    <ul class="flex-column pl-2 nav">
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center " href="/usermanagment">
+                                                G-suite License
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center " href="/createUser">
+                                                New Account
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center" href="/SignatureSetting">
+                                    <span class="material-icons mr-sm">fingerprint</span> Signature
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center" href="/MarketingSetting">
+                                    <span class="material-icons mr-sm"> business_center </span> Marketing & Advertising
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center" href="/calendersettings">
+                                    <span class="material-icons mr-sm">
+                                        event
+                                    </span>
+                                    Calendar Appointments
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center " type="button" data-toggle="collapse"
+                                    data-target="#Email" aria-controls="Email" aria-expanded="false" aria-label="Email">
+                                    <i class="material-icons mr-sm">mail_outline</i>
+                                    Email
+                                    <span class="material-icons ml-auto rotate">
+                                        keyboard_arrow_right
+                                    </span>
+                                </a>
+                                <div class="sub-group collapse" id="Email">
+                                    <ul class="flex-column pl-2 nav">
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center " href="/MailMetrix">
+                                                Mail Matrix
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center " href="/Delegation">
+                                                Delegation
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center " type="button" data-toggle="collapse"
+                                    data-target="#folder_open" aria-controls="folder_open" aria-expanded="false"
+                                    aria-label=" Drive File">
+                                    <i class="material-icons mr-sm">folder_open</i>
+                                    Drive File & Folders
+                                    <span class="material-icons ml-auto rotate">
+                                        keyboard_arrow_right
+                                    </span>
+                                </a>
+                                <div class="sub-group collapse" id="folder_open">
+                                    <ul class="flex-column pl-2 nav">
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center " href="/DriveAnalysis">
+                                                Account Drive
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center " href="#">
+                                                Domain Files
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center " type="button" data-toggle="collapse"
+                                    data-target="#data_usage" aria-controls="data_usage" aria-expanded="false"
+                                    aria-label=" Drive File">
+                                    <i class="material-icons mr-sm">data_usage</i>
+                                    Data Migration
+                                    <span class="material-icons ml-auto rotate">
+                                        keyboard_arrow_right
+                                    </span>
+                                </a>
+                                <div class="sub-group collapse" id="data_usage">
+                                    <ul class="flex-column pl-2 nav">
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center "
+                                                href="/DataMigration/BackMailBox">
+                                                BackUp MailBox
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center "
+                                                href="/DataMigration/RestorMailBox">
+                                                Restore MailBox
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center " type="button" data-toggle="collapse"
+                                    data-target="#description" aria-controls="description" aria-expanded="false"
+                                    aria-label="DLP Reporting">
+                                    <i class="material-icons mr-sm">description</i>
+                                    DLP Reporting
+                                    <span class="material-icons ml-auto rotate">
+                                        keyboard_arrow_right
+                                    </span>
+                                </a>
+                                <div class="sub-group collapse" id="description">
+                                    <ul class="flex-column pl-2 nav">
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center " href="/EmailReport">
+                                                G-mail
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class=" nav-link d-flex align-items-center " href="/DriveReport">
+                                                Drive
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center" href="#">
+                                    <i class="material-icons mr-sm">bug_report</i>
+                                    Reports & Logs
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center" href="#">
+                                    <i class="material-icons mr-sm">help_outline</i>
+                                    Help & Support
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav nav-bottom flex-column flex-nowrap">
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center" href="#">
+                                    <i class="material-icons mr-sm">settings</i>
+                                    Setting
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class=" nav-link d-flex align-items-center" href="/logout">
+                                    <i class="material-icons mr-sm">keyboard_tab</i>
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <main class="col">
+                    <div class="row">
+
+                        <nav
+                            class="navbar navbar-custom  navbar-expand-lg align-items-center bg-light w-100">
+                            <div class="navbar-collapse custom-search-clear">
+                                <div class="col-4 input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text material-icons">
+                                            search
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Explore GMS"
+                                        aria-label="Explore GMS" aria-describedby="basic-addon1">
+                                </div>
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-menu" role="button"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <img src="/images/bell.svg" alt="pic" class="bell">
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right"
+                                            aria-labelledby="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <a class="dropdown-item" href="#">Something else
+                                                here</a>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-menu"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            <div class="avatar-sm">
+                                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=046c29138c1335ef8edee7daf521ba50"
+                                                    alt="pic" class="pic">
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right"
+                                            aria-labelledby="dropdown-menu">
+                                            <div class="dropdown-item dropdown-item-profile">
+                                                <div class="prof">
+                                                    <div class="avatar-lg">
+                                                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=046c29138c1335ef8edee7daf521ba50"
+                                                            alt="pic" class="pic">
+                                                    </div>
+                                                    <div class="text-box">
+                                                        <h3 class="h3">brian kip</h3>
+                                                        <p>briankip2020@gmail.com</p>
+                                                        <a class="btn-link" href=#" target="_blank">
+                                                            Manage your G-suite Account
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="row">
+                        <div class="container-gms">
+                            <div class="gms-accounts-page">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a class="d-flex" href="#">
+                                                Home
+                                                <span class="material-icons">
+                                                    keyboard_arrow_right
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">User Management</li>
+                                    </ol>
+                                </nav>
+                                <h2 class="h2">GMS Accounts</h2>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="shadow-modal p-3 mb-5 bg-white">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <div class="row">
+                                                            <div class="col-md-4 mb-3">
+                                                                <div class="custom-search">
+                                                                    <div class="input-group mb-3">
+                                                                        <div class="input-group-prepend">
+                                                                            <span
+                                                                                class="input-group-text material-icons">
+                                                                                search
+                                                                            </span>
+                                                                        </div>
+                                                                        <input type="text" class="form-control"
+                                                                            placeholder="Find user"
+                                                                            aria-label="Find user"
+                                                                            aria-describedby="basic-addon1">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <th scope="col">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="customCheck1">
+                                                                <label class="custom-control-label">
+                                                                    <span class="material-icons">
+                                                                        arrow_drop_down
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </th>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">Email</th>
+                                                        <th scope="col">Has Access</th>
+                                                        <th scope="col">Last Login Time</th>
+                                                        <th scope="col">Settings</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr th:each="UserApp : ${users}">
+                                                        <th scope="row">
+                                                            <div class="custom-control custom-checkbox">
+                                                                <input type="checkbox" class="custom-control-input"
+                                                                    id="customCheck1">
+                                                                <label class="custom-control-label">
+                                                                </label>
+                                                            </div>
+                                                        </th>
+                                                        <td>
+                                                            <span th:text="${UserApp.getId()}"></span>
+                                                        </td>
+                                                        <td>
+                                                            <div class="avatar">
+                                                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=046c29138c1335ef8edee7daf521ba50"
+                                                                    alt="pic" class="pic">
+                                                            </div>
+                                                            <span th:text="${UserApp.getUsername()}"></span>
+                                                        </td>
+                                                        <td>
+                                                            <span th:text="${UserApp.getEmail()}"></span>
+                                                        </td>
+                                                        <td>
+                                                            <span th:text="${UserApp.isActive()}"></span>
+                                                            <div class="pill pill-danger">
+                                                                <h4 class="text-red">No Access</h4>
+                                                            </div>
+                                                            <div class="pill pill-success">
+                                                                <h4 class="text-green">Has Access</h4>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <span th:text="${UserApp.getUpdatedAt()}"></span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="material-icons">
+                                                                settings
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+</html>

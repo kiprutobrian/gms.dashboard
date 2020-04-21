@@ -1,0 +1,28 @@
+// Fonts
+@import './fonts/fonts';
+
+// Variables
+@import 'variables';
+ 
+// Bootstrap
+@import './bootstrap/bootstrap';
+
+// Components
+@import './components/table';
+@import './components/breadcrumb';
+@import './components/search';
+@import './components/nav-icon';
+// @import './components/icons'; 
+
+// Partials
+@import 'general';
+@import 'auth';
+@import 'navbar';
+@import 'leftnav';
+
+// Pages
+@import 'home-page';
+@import 'dashboard';
+@import 'gms-accounts';
+@import 'create-account';
+@import 'martketing-advert';
